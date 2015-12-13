@@ -1,0 +1,5 @@
+install.packages("dplyr")
+library(dplyr)
+pc <- read.csv("..\w1-project\household_power_consumption.txt", header=TRUE, sep=";", na.string="?", colClasses=c("character", "character", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))
+pc1 <- filter(pc, as.Date(Date, "%d/%m/%Y") >= "2007-02-01" & as.Date(Date, "%d/%m/%Y") <= "2007-02-02" )
+write.table(pc,"household_power_consumption.txt", sep=";")
