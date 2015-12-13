@@ -3,5 +3,6 @@
 pc <- read.csv("household_power_consumption.csv", header=TRUE, sep=";", na.string="?", colClasses=c("character", "character", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))
 f <- factor(pc$Date, labels=c("Thu", "Fri"))
 plot(pc$Global_active_power, ylab="Global active power (kilowatts)", type="l")
+## axis(at=f, side=1)
 dev.copy(png, file="plot2.png")
 dev.off()
